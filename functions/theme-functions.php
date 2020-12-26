@@ -21,6 +21,7 @@ function develoger_add_count_to_archive_linkes($links) {
 }
 
 // Add search botton to the end of the main menu
+add_filter('wp_nav_menu_items', 'develoger_add_search_btn', 10, 2);
 function develoger_add_search_btn($items, $args) {
   if ($args->theme_location != 'develoger_header') { return $items; }
   ob_start();
