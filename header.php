@@ -23,5 +23,3 @@
   <!-- start: #wrapper -->
   <div id="wrapper"> <?php
     get_template_part('partials/header'); ?>
-</body>
-</html>
