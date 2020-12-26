@@ -1,7 +1,7 @@
 <?php
 
-add_action('admin_enqueue_scripts', 'develoger_option_panel_enqueue_scripts', 20 );  
-function develoger_option_panel_enqueue_scripts() {
+add_action('admin_enqueue_scripts', 'csf_option_panel_enqueue_scripts', 20 );  
+function csf_option_panel_enqueue_scripts() {
   $prefix = DEVELOGER_THEMEPREFIX;
   $ver = '0.0.1';
   if (is_admin()) {
@@ -17,10 +17,19 @@ function develoger_option_panel_enqueue_scripts() {
 }
 
 // Validate HEX color
-function develoger_validate_hex_color( $value ) {
+function csf_validate_hex_color( $value ) {
   if( $value && !is_wp_error($value) ){
     if ( !sanitize_hex_color($value) && $value != 'transparent' && strpos( $value, 'rgb') === false ) {    
-      return 'Please write a valid color!', 'csf' );
+      return '유효한 색깔을 입력해주세요';
+    }
+  }
+}
+
+// Validate HEX color (exclude transparent)
+function csf_validate_hex_color_transparent( $value ) {
+  if( $value && !is_wp_error($value) ){
+    if ( !sanitize_hex_color($value) && strpos( $value, 'rgb') === false ) {    
+      return '유효한 색깔을 입력해주세요';
     }
   }
 }

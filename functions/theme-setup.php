@@ -17,7 +17,6 @@ if (!class_exists('develoger_theme_setup')) {
     }
     public function setup_option_panel() {
       if (is_admin() || is_customize_preview()) {
-        require_once(DEVELOGER_ABSPATH . '/frameworks/codestar/codestar-framework.php');
         require_once(DEVELOGER_ABSPATH . '/option-panel/init.php');
       }
     }

@@ -88,7 +88,7 @@ CSF::createSection( $opt_name, array(
 			'url' => true,
 			'preview'=> true,
 			'title' => 'Logo Uploader',
-			'desc' => 'Recommended sizes - width: 320px, height: 120px.',
+			'desc' => '추천 사이즈 - width: 320px, height: 120px.',
 		),
 	)
 ) );

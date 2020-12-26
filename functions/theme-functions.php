@@ -25,7 +25,7 @@ add_filter('wp_nav_menu_items', 'develoger_add_search_btn', 10, 2);
 function develoger_add_search_btn($items, $args) {
   if ($args->theme_location != 'develoger_header') { return $items; }
   ob_start();
-  get_template_part('partials/search-btn');
+  get_template_part('partials/search-btn', 'menu');
   $search_btn = ob_get_contents();
   ob_end_clean();
   return ($items . $search_btn);
@@ -51,4 +51,26 @@ function develoger_reading_time($content) {
   $minutes = 1;
   if (!empty($words)) $minutes = max([1, floor($words, $words_per_minute)]);
   return $minutes;
+}
+
+function develoger_get_theme_options() {
+  global $dt_options;
+  if (empty($dt_options)) {
+    $dt_options = get_option(DEVELOGER_OPTIONSLUG);
+    if (empty($dt_options)) return false;
+  }
+  return $dt_options;
+}
+
+function develoger_get_option($option = '', $default = false) {
+  global $dt_options;
+  if (empty($dp_options)) {
+    $dt_options = get_option(DEVELOGER_OPTIONSLUG);
+    if (empty($dt_options)) return false;
+  }
+  if (isset($dp_options[$option])) { 
+    return $dp_options[$option];
+  } else {
+    return $default;
+  }
 }
