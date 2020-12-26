@@ -12,13 +12,13 @@ if (!class_exists('develoger_theme_setup')) {
       /* Register nav menu */
       add_action('after_setup_theme', array($this, 'register_nav_menu'));
 
-      /* Load codestar framework and setup option pannel */
-      add_action('after_setup_theme', array($this, 'setup_option_pannel'), 1);
+      /* Load codestar framework and setup option panel */
+      add_action('after_setup_theme', array($this, 'setup_option_panel'), 1);
     }
-    public function setup_option_pannel() {
+    public function setup_option_panel() {
       if (is_admin() || is_customize_preview()) {
         require_once(DEVELOGER_ABSPATH . '/frameworks/codestar/codestar-framework.php');
-        require_once(DEVELOGER_ABSPATH . '/admin/option-pannel/init.php');
+        require_once(DEVELOGER_ABSPATH . '/option-panel/init.php');
       }
     }
     public function includes() {
