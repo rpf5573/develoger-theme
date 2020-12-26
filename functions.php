@@ -13,6 +13,7 @@ if( !defined('DEVELOGER_THEMEPATH') ) define('DEVELOGER_THEMEPATH', get_template
 if( !defined('DEVELOGER_THEMEPREFIX') ) define('DEVELOGER_THEMEPREFIX', 'develoger');
 if( !defined('DEVELOGER_THEMENAME') ) define('DEVELOGER_THEMENAME', 'Develoger' );
 if( !defined('DEVELOGER_THEMESLUG') ) define('DEVELOGER_THEMESLUG', 'develoger' ); // Do not change
+if( !defined('DEVELOGER_OPTIONSLUG') ) define('DEVELOGER_THEMESLUG', 'develoger_option' ); // Do not change
 if( !isset($content_width) ) $content_width = 668; // oembed width ?? 이게 뭐지?
 
 require_once(DEVELOGER_ABSPATH . '/functions/theme-setup.php');
